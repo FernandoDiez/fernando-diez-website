@@ -4,7 +4,18 @@ import Header from "../components/Header.astro";
 import "../styles/global.css";
 ---
 
-<!doctype html>
+<script is:inline>
+	document.addEventListener("astro:after-swap", () => {
+		if (
+			localStorage.theme === "dark" ||
+			(!("theme" in localStorage) &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches)
+		) {
+			document.documentElement.classList.add("dark");
+		}
+	});
+</script>
+
 <html lang="en" class="light">
 	<head>
 		<meta charset="UTF-8" />

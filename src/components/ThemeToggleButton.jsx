@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const ThemeToggleButton = () => {
+const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const ThemeToggleButton = () => {
   );
 };
 
-export default ThemeToggleButton;
+export default DarkModeToggle;
